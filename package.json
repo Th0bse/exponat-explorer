@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Th0bse/exponat-explorer/issues"
   },
-  "homepage": "https://github.com/Th0bse/exponat-explorer#readme"
+  "homepage": "https://github.com/Th0bse/exponat-explorer#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
 }
