@@ -1,3 +1,5 @@
-##ExponatExplorer
+# test-project
 
-Dies ist eine README Datei
+## Beschreibung
+
+das ist ein test
