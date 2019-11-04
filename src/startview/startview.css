@@ -1,0 +1,23 @@
+dummy{
+
+}
+.ueberschrift{
+  font-size: 100px;
+
+}
+.text{
+  color: navy;
+
+}
+.b1{
+  height: auto;
+  width: 200px;
+
+}
+.b2{
+  width: 200px;
+  height: auto;
+}
+main{
+  padding: 10px;
+}

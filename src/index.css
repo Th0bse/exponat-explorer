@@ -13,13 +13,18 @@ html, body {
     margin: 0;
 }
 
+
+
 body {
+
     font-family: 'Roboto', sans-serif;
     font-size: 12pt;
-
     background-color: rgb(212, 227, 237);
 }
 
 .hidden {
     display: none;
+}
+.navbar-brand{
+
 }
