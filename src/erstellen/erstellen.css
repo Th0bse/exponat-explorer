@@ -6,6 +6,7 @@ main  {
 
 .ueberschrift {
     padding-left: 2em;
+    background-color: rgb(255, 228, 181);
 }
 
 .bild-Upload {
@@ -36,7 +37,7 @@ main  {
 
 .tabelle {
     border: 5px dashed rgb(238, 232, 170);
-    background-color: rgb(255, 228, 181);
+    background-color: white;
     margin-left: 2em;
     margin-right: 2em;
     padding-top: 1em;
