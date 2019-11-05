@@ -1,23 +1,42 @@
 dummy{
 
 }
+
+
+
+.rahmen >*  {
+  background-color: white;
+  padding: 30px;
+
+
+
+
+
+}
+
+.rahmen{
+
+}
 .ueberschrift{
   font-size: 100px;
-
+  background-color: rgb(255,228,181 );
 }
 .text{
   color: navy;
 
 }
-.b1{
+.bilder > *{
+  flex: auto;
   height: auto;
   width: 200px;
 
 }
-.b2{
-  width: 200px;
-  height: auto;
-}
+
 main{
-  padding: 10px;
+  padding: 100px;
+  background-image: url("./../img/hintergrund.jpg");
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 1000px;
 }

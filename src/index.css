@@ -15,6 +15,7 @@ html, body {
 
 
 
+
 body {
 
     font-family: 'Roboto', sans-serif;
@@ -26,5 +27,18 @@ body {
     display: none;
 }
 .navbar-brand{
+  font-size: 30px;
 
+}
+.navbar{
+  height: 100px;
+  font-size:20px;
+  background-color: rgb(210,105,030) !important;
+
+}
+.navbar>*{
+  color: black;
+}
+.nav-link{
+  color: black;
 }
