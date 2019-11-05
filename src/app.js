@@ -2,6 +2,7 @@
 
 import stylesheet from "./app.css";
 
+import Steckbrief from "./steckbrief/steckbrief.js";
 import Navigo from "navigo/lib/navigo.js";
 import Overview from "./overview/overview.js";
 import Detail from "./detail/detail.js";
@@ -24,6 +25,7 @@ import Detail from "./detail/detail.js";
             "detail/display/:id":   params => this.showDetail(params.id, "display"),
             "detail/new":           () => this.showDetail("", "new"),
             "overview":            () => this.showOverview(),
+            "steckbrief":            () => this.showSteckbrief(),
             "*":                    () => this.showOverview(),
         });
 
@@ -82,6 +84,11 @@ import Detail from "./detail/detail.js";
         let view = new Overview(this);
         this._switchVisibleView(view);
     }
+    showSteckbrief() {
+        let view = new Steckbrief(this);
+        this._switchVisibleView(view);
+    }
+
 
     showDetail(id, mode){
         let view = new Detail(this, id, mode);
