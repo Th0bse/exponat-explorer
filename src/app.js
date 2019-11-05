@@ -4,6 +4,7 @@ import stylesheet from "./app.css";
 
 import Navigo from "navigo/lib/navigo.js";
 import Overview from "./overview/overview.js";
+import Startview from "./startview/startview.js";
 import Detail from "./detail/detail.js";
     /**
      * Hauptklasse der Anwendung. Kümmert sich darum, die Anwendung auszuführen
@@ -24,6 +25,7 @@ import Detail from "./detail/detail.js";
             "detail/display/:id":   params => this.showDetail(params.id, "display"),
             "detail/new":           () => this.showDetail("", "new"),
             "overview":            () => this.showOverview(),
+            "start":            () => this.showStartView(),
             "*":                    () => this.showOverview(),
         });
 
@@ -80,6 +82,11 @@ import Detail from "./detail/detail.js";
 
     showOverview() {
         let view = new Overview(this);
+        this._switchVisibleView(view);
+    }
+
+    showStartView() {
+        let view = new Startview(this);
         this._switchVisibleView(view);
     }
 

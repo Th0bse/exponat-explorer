@@ -13,13 +13,32 @@ html, body {
     margin: 0;
 }
 
+
+
+
 body {
+
     font-family: 'Roboto', sans-serif;
     font-size: 12pt;
-
     background-color: rgb(212, 227, 237);
 }
 
 .hidden {
     display: none;
+}
+.navbar-brand{
+  font-size: 30px;
+
+}
+.navbar{
+  height: 100px;
+  font-size:20px;
+  background-color: rgb(210,105,030) !important;
+
+}
+.navbar>*{
+  color: black;
+}
+.nav-link{
+  color: black;
 }
