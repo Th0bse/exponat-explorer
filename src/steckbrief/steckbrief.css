@@ -1,0 +1,27 @@
+main {
+    margin:  0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    background-color: rgb(255, 228, 181);
+    }
+
+section { min-height: 100%; }
+a {
+  text-decoration: none;
+}
+.infos > * {
+
+  front-family: 'Roboto', sans-serif;
+  front-weight: 500;
+  color: 0000;
+
+}
+h2 {
+  front size: 40px; }
+}
+hr {
+  width:30px;
+  height: 3px;
+
+}
