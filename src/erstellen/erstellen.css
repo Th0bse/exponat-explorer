@@ -1,0 +1,91 @@
+main  {
+    font-family: sans-serif;
+    font-size: 16pt;
+    background-color: white;
+}
+
+.ueberschrift {
+    padding-left: 2em;
+    background-color: rgb(255, 228, 181);
+}
+
+.bild-Upload {
+    border: 5px dotted red;
+    width: 10em;
+    height: 10em;
+    float: right;
+    margin-right: 4em;
+    margin-top: 1.5em;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+#bildUpload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.imgMuseum {
+    width: 80%;
+    height: auto;
+}
+
+.tabelle {
+    border: 5px dashed rgb(238, 232, 170);
+    background-color: white;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+td {
+    padding-left: 1em;
+    padding-top: 0.5em;
+    width: 5em;
+}
+
+input {
+    width: 40em !important;
+}
+
+.addButton {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 1em;
+  margin-left: 1em;
+}
+
+.deleteButton {
+    background-color: red;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 1em;
+    margin-left: 2em;
+}
