@@ -30,6 +30,7 @@ class Erstellen {
     get title() {
         return "Erstellen";
     }
+
 }
 
 export default Erstellen;

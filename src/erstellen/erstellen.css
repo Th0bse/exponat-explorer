@@ -1,24 +1,25 @@
 main  {
     font-family: sans-serif;
     font-size: 16pt;
-    background-image: url("./../Karlsruhe-Schloss.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: white;
+}
+
+.ueberschrift {
+    padding-left: 2em;
 }
 
 .bild-Upload {
     border: 5px dotted red;
     width: 10em;
     height: 10em;
-    /*margin-left: 50em;*/
     float: right;
-    margin-right: 2em;
-    margin-top: 1em;
+    margin-right: 4em;
+    margin-top: 1.5em;
     cursor: pointer;
     text-align: center;
 
 }
+
 #bildUpload {
 	width: 0.1px;
 	height: 0.1px;
@@ -34,12 +35,19 @@ main  {
 }
 
 .tabelle {
-    border: 5px dotted green;
-    background-color: rgb(255,255,160);
+    border: 5px dashed rgb(238, 232, 170);
+    background-color: rgb(255, 228, 181);
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
 }
 
 td {
-    padding: 0.5em;
+    padding-left: 1em;
+    padding-top: 0.5em;
     width: 5em;
 }
 
@@ -60,6 +68,8 @@ input {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  border-radius: 1em;
+  margin-left: 1em;
 }
 
 .deleteButton {
@@ -75,8 +85,6 @@ input {
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-}
-
-input::placeholder {
-  color: red;
+    border-radius: 1em;
+    margin-left: 2em;
 }
