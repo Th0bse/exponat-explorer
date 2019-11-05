@@ -2,6 +2,8 @@
 
 import stylesheet from "./app.css";
 
+
+import Erstellen from "./erstellen/erstellen.js";
 import Navigo from "navigo/lib/navigo.js";
 import Overview from "./overview/overview.js";
 import Detail from "./detail/detail.js";
@@ -23,7 +25,8 @@ import Detail from "./detail/detail.js";
         this._router.on({
             "detail/display/:id":   params => this.showDetail(params.id, "display"),
             "detail/new":           () => this.showDetail("", "new"),
-            "overview":            () => this.showOverview(),
+            "overview":             () => this.showOverview(),
+            "erstellen":             ()=> this.showErstellen(),
             "*":                    () => this.showOverview(),
         });
 
@@ -80,6 +83,10 @@ import Detail from "./detail/detail.js";
 
     showOverview() {
         let view = new Overview(this);
+        this._switchVisibleView(view);
+    }
+    showErstellen() {
+        let view = new Erstellen(this);
         this._switchVisibleView(view);
     }
 

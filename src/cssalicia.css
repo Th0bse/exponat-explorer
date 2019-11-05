@@ -19,6 +19,10 @@ label { /* Beschriftung auf eigener Zeile */
   display: inline-block;
 }
 
+input {
+    padding-left: 10px;
+}
+
 form-group {
     float: left;
 }
@@ -67,6 +71,8 @@ img {
   height: auto;
   border-left: 25px;
 }
+
+
 
 .bild-upload {
     border-color: green;

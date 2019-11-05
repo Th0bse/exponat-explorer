@@ -11,7 +11,9 @@ form {
   border: 1px solid #8c8c8c;
 }
 
-
+form-goup-input {
+    marg: 10em;
+}
 
 label { /* Beschriftung auf eigener Zeile */
   display: block;
