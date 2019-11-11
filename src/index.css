@@ -13,7 +13,9 @@ html, body {
     margin: 0;
 }
 
-
+label {
+    cursor: pointer;
+}
 
 
 body {
