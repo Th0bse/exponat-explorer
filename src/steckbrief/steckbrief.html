@@ -1,53 +1,54 @@
 <section>
     <main>
+
+
         <div class="infos">
 
             <div class="steckbriefÜberschrift">
                 <h1>Exponat Informationen</h1>
             </div>
 
-            <div class="steckbriefInhalt">
-                <table>
-                    <tr>
-                        <td>
-                            <p>Titel:</p>
-                        </td>
-                        <td rowspan="3">
-                            <p>Bild</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Künstler:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Ort:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Erstellt am:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Ausstellungszeitraum:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Austellungsort:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Wert:</p>
-                        </td>
-                    </tr>
-            </div>
+            <div class="steckbriefInhalt"></div>
             <button class="zurueckButton"><img class="imgZurueckButton" src="./../img/zurueckButton.jpg" />Zur&uuml;ck zur &Uumlbersicht</button>
         </div>
     </main>
+
+    <!-- template goes here -->
+  <template id="eintraege">
+    <table>
+        <tr>
+            <td>
+                <p>Titel: $TITEL$</p>
+            </td>
+            <td rowspan="3">
+                <p>Bild</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Künstler: $KUENSTLER$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Ort: $ORT$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Erstellt am: $ERST_DATUM$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Ausstellungszeitraum: $ZEITRAUM$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Austellungsort: $AUST_ORT$</p>
+            </td>
+        </tr>
+      </table>
+    </template>
 </section>

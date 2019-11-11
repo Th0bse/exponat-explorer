@@ -21,6 +21,7 @@ class App {
      */
     constructor() {
         this.exponate = [];
+        this.einlesen();
         this._title = "My App";
         this._currentView = null;
 
@@ -50,7 +51,6 @@ class App {
     start() {
         console.log("Die Klasse App sagt Hallo!");
         this._router.resolve();
-        this.einlesen();
     }
 
     _switchVisibleView(view) {
