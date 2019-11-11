@@ -21,22 +21,32 @@ class Overview {
         let container = document.createElement("div");
         container.innerHTML = overview.trim();
         // Anzuzeigende HTML-Elemente ermitteln
-        let section = container.querySelector("#overview").cloneNode(true).innerHTML;
+        let section = container.querySelector("#overview").cloneNode(true);
 
-        for (let expKey in this.exp) {
-            let dummy = document.createElement("div");
-            dummy.innerHTML = section;
+        // build table
+
+        console.log("render table");
+        let table = container.querySelector("#main-table > table");
+        console.log(table.innerHTML);
+        table.innerHTML = "";
 
 
-            // replace Placeholders in the html template with actual values
-            section.innerHTML.replace("$$NAME$$", expKey.name);
-            section.innerHTML.replace("$$DESCRIPTION$$", expKey.description);
-        }
+        let headerTemplate = container.querySelector("#table-header").innerHTML;
+        console.log(headerTemplate);
+        let header = document.createElement("tr");
+        header.innerHTML = headerTemplate;
+        table.appendChild(header);
+        console.log(table);
+        //console.log(section.querySelector("#table-header > tr").innerHTML)
+        // table.appendChild(container.querySelector("#table-header > tr").cloneNode());
+
         let content = {
             className: "overview",
-            main: section.querySelectorAll("main > *"),
+            //main: section.querySelectorAll("main > *"),
+            main: table
         };
 
+        console.log(content);
         // Ergebnis zurückliefern
         return content;
     }
