@@ -30,7 +30,6 @@ import Detail from "./detail/detail.js";
         this._router.on({
             "detail/display/:id":   params => this.showDetail(params.id, "display"),
             "detail/new":           () => this.showDetail("", "new"),
-            "overview":            () => this.showOverview(),
             "start":            () => this.showStartView(),
             "steckbrief":            () => this.showSteckbrief(),
             "overview":             () => this.showOverview(),
