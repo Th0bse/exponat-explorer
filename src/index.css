@@ -12,6 +12,14 @@
 html, body {
     margin: 0;
 }
+main{
+  background-image: url("./img/hintergrund.jpg");
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 100px;
+  height: 1000px;
+}
 
 
 
