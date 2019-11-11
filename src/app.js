@@ -97,13 +97,16 @@ import Detail from "./detail/detail.js";
       this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg","Stoffschatulle","-","USA","24.03.1790","02.06.2002-20.02.2022","Louvre");
       this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg","Toter Panda","Margit Czeniz","Sydeny","18.05.2000","01.01.2009-01.01.3000","Naturkunde-Museum Heidelberg");
       this.addExponat("./img/exponat_bilder/exponat_windraad.jpg","Windraad Herkules","Harald Schütz","München","14.03.1968","01.01.2012-01.01.2020","Deutsches Museum");
-
+//    DEBUG:
+      console.log(this.exponate);
+      this.removeExponat("Wildkatzen");
+      console.log(this.exponate);
     }
 
 
 
     addExponat(link,titel,kuenster,ort,erstelldatum,ausstellungszeitraum,ausstellungsort){
-      exponate.push({
+      this.exponate.push({
         link:link,
         titel: titel,
         kuenstler: kuenster,
@@ -117,7 +120,13 @@ import Detail from "./detail/detail.js";
 
     }
 
-    removeExponat(){
+    removeExponat(name){
+      for(var i=0;i<this.exponate.length;i++){
+        if (this.exponate[i].titel==name) {
+          delete this.exponate[i];
+        }
+      }
+
 
     }
 
