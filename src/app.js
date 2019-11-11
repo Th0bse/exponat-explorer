@@ -14,10 +14,13 @@ import Detail from "./detail/detail.js";
      * und die angeforderten Bildschirmseiten anzuzeigen.
      */
     class App {
+
+
         /**
          * Konstruktor.
          */
         constructor() {
+            this.exponate = [];
             this._title = "My App";
             this._currentView = null;
 
@@ -50,6 +53,7 @@ import Detail from "./detail/detail.js";
         start() {
             console.log("Die Klasse App sagt Hallo!");
             this._router.resolve();
+            this.einlesen();
         }
 
         _switchVisibleView(view) {
@@ -86,6 +90,37 @@ import Detail from "./detail/detail.js";
         }
     }
 
+    einlesen(){
+      this.addExponat("./img/exponat_bilder/exponat_katzen.jpg","Wildkatzen","Manfred Uwe","Schwarzwald","25.08.2004","01.01.2012-01.01.2020","Willi-Hellermann-Museum");
+      this.addExponat("./img/exponat_bilder/exponat_kopf.jpg","Maya Kopf","-","Amerika","1055","02.10.2017-01.08.2025","Montopolinten Museum of Art");
+      this.addExponat("./img/exponat_bilder/exponat_spiegel.jpg","Antiker Spiegel","Otto Wingler","Schwarzwald","1896","19.04.2005-01.01.2030","Kultur-Museum Karlsruhe");
+      this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg","Stoffschatulle","-","USA","24.03.1790","02.06.2002-20.02.2022","Louvre");
+      this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg","Toter Panda","Margit Czeniz","Sydeny","18.05.2000","01.01.2009-01.01.3000","Naturkunde-Museum Heidelberg");
+      this.addExponat("./img/exponat_bilder/exponat_windraad.jpg","Windraad Herkules","Harald Schütz","München","14.03.1968","01.01.2012-01.01.2020","Deutsches Museum");
+
+    }
+
+
+
+    addExponat(link,titel,kuenster,ort,erstelldatum,ausstellungszeitraum,ausstellungsort){
+      exponate.push({
+        link:link,
+        titel: titel,
+        kuenstler: kuenster,
+        ort: ort,
+        erstelldatum: erstelldatum,
+        ausstellungszeitraum: ausstellungszeitraum,
+        ausstellungsort: ausstellungsort,
+
+      });
+
+
+    }
+
+    removeExponat(){
+
+    }
+
     showOverview() {
         let view = new Overview(this);
         this._switchVisibleView(view);
@@ -99,7 +134,7 @@ import Detail from "./detail/detail.js";
         let view = new Startview(this);
         this._switchVisibleView(view);
     }
-    
+
     showSteckbrief() {
         let view = new Steckbrief(this);
         this._switchVisibleView(view);
