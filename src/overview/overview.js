@@ -26,7 +26,7 @@ class Overview {
         // build table
 
         console.log("render table");
-        let table = container.querySelector("#main-table > table");
+        let table = document.createElement("table");
         console.log(table.innerHTML);
         table.innerHTML = "";
 
@@ -37,13 +37,20 @@ class Overview {
         header.innerHTML = headerTemplate;
         table.appendChild(header);
         console.log(table);
-        //console.log(section.querySelector("#table-header > tr").innerHTML)
-        // table.appendChild(container.querySelector("#table-header > tr").cloneNode());
 
+        // append the individual rows to the table, one per exponat
+        let contentTemplate = container.querySelector("#table-content").innerHTML;
+        console.log(contentTemplate);
+        let contentRow = document.createElement("tr");
+        contentRow.innerHTML = contentTemplate;
+        table.appendChild(contentRow);
+
+        container.querySelector("main > div").appendChild(table);
+        console.log(container);
         let content = {
             className: "overview",
             //main: section.querySelectorAll("main > *"),
-            main: table
+            main: container.querySelectorAll("main > *"),
         };
 
         console.log(content);
