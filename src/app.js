@@ -3,6 +3,8 @@
 import stylesheet from "./app.css";
 
 import Steckbrief from "./steckbrief/steckbrief.js";
+
+import Erstellen from "./erstellen/erstellen.js";
 import Navigo from "navigo/lib/navigo.js";
 import Overview from "./overview/overview.js";
 import Startview from "./startview/startview.js";
@@ -30,6 +32,8 @@ import Detail from "./detail/detail.js";
             "overview":            () => this.showOverview(),
             "start":            () => this.showStartView(),
             "steckbrief":            () => this.showSteckbrief(),
+            "overview":             () => this.showOverview(),
+            "erstellen":             ()=> this.showErstellen(),
             "*":                    () => this.showOverview(),
         });
 
@@ -96,6 +100,10 @@ import Detail from "./detail/detail.js";
 
     showOverview() {
         let view = new Overview(this);
+        this._switchVisibleView(view);
+    }
+    showErstellen() {
+        let view = new Erstellen(this);
         this._switchVisibleView(view);
     }
 
