@@ -136,30 +136,12 @@
                             </td>
                         </tr>
                     </table>
-                    <button type="button" class="addButton">Exponat hinzuf&uuml;gen</button>
+                    <button type="button" class="addButton" id="mehr">Exponat hinzuf&uuml;gen</button>
                     <!--Button zum Hinzufuegen eines Exponats-->
-                    <button type="button" class="deleteButton">Exponat l&ouml;schen</button>
+                    <button type="button" class="deleteButton" id="loeschen">Exponat l&ouml;schen</button>
                     <!--Button zum Löschen eines Esponats-->
                 </div>
             </form>
         </div>
     </main>
-    <script>
-        function readURL(input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-          $('#img').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]);
-      }
-    }
-
-    $("#bildUpload").change(function() {
-      readURL(this);
-    });
-
-   </script>
 </section>
