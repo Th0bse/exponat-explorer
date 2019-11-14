@@ -21,22 +21,39 @@ class Overview {
         let container = document.createElement("div");
         container.innerHTML = overview.trim();
         // Anzuzeigende HTML-Elemente ermitteln
-        let section = container.querySelector("#overview").cloneNode(true).innerHTML;
+        let section = container.querySelector("#overview").cloneNode(true);
 
-        for (let expKey in this.exp) {
-            let dummy = document.createElement("div");
-            dummy.innerHTML = section;
+        // build table
+
+        console.log("render table");
+        let table = document.createElement("table");
+        console.log(table.innerHTML);
+        table.innerHTML = "";
 
 
-            // replace Placeholders in the html template with actual values
-            section.innerHTML.replace("$$NAME$$", expKey.name);
-            section.innerHTML.replace("$$DESCRIPTION$$", expKey.description);
-        }
+        let headerTemplate = container.querySelector("#table-header").innerHTML;
+        console.log(headerTemplate);
+        let header = document.createElement("tr");
+        header.innerHTML = headerTemplate;
+        table.appendChild(header);
+        console.log(table);
+
+        // append the individual rows to the table, one per exponat
+        let contentTemplate = container.querySelector("#table-content").innerHTML;
+        console.log(contentTemplate);
+        let contentRow = document.createElement("tr");
+        contentRow.innerHTML = contentTemplate;
+        table.appendChild(contentRow);
+
+        container.querySelector("main > div").appendChild(table);
+        console.log(container);
         let content = {
             className: "overview",
-            main: section.querySelectorAll("main > *"),
+            //main: section.querySelectorAll("main > *"),
+            main: container.querySelectorAll("main > *"),
         };
 
+        console.log(content);
         // Ergebnis zurückliefern
         return content;
     }

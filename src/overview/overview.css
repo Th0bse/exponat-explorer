@@ -1,0 +1,12 @@
+dummy {
+
+}
+
+.rahmen > * {
+    background-color: white;
+    padding: 30px;
+}
+
+main {
+    padding: 100px;
+}
