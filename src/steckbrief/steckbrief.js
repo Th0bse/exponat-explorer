@@ -36,6 +36,9 @@ class Steckbrief {
             template = template.replace("$ERST_DATUM$", this.app.exponate[index].erstelldatum);
             template = template.replace("$ZEITRAUM$",this.app.exponate[index].ausstellungszeitraum);
             template = template.replace("$AUST_ORT$", this.app.exponate[index].ausstellungsort);
+            template = template.replace("$BESCHR$", this.app.exponate[index].beschreibung);
+            template = template.replace("$EPOCHE$", this.app.exponate[index].epoche);
+            template = template.replace("$WERT$", this.app.exponate[index].wert);
 
             console.log(template);
             let dummy = document.createElement("div");
