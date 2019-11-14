@@ -7,13 +7,6 @@ class Overview {
 
     constructor(app){
         this.app = app;
-        this.exp = [{
-          "name"        : "Test 1",
-          "description" : "Das ist eine Bechreibung"
-      },{
-          "name"        : "Test 2",
-          "description" : "Das ist auch eine Beschreibung"
-      }]
     };
 
     onShow() {
@@ -39,11 +32,16 @@ class Overview {
         console.log(table);
 
         // append the individual rows to the table, one per exponat
-        let contentTemplate = container.querySelector("#table-content").innerHTML;
-        console.log(contentTemplate);
-        let contentRow = document.createElement("tr");
-        contentRow.innerHTML = contentTemplate;
-        table.appendChild(contentRow);
+        for (let e in this.app.exponate) {
+            let contentTemplate = container.querySelector("#table-content").innerHTML;
+            console.log(contentTemplate);
+            let contentRow = document.createElement("tr");
+
+            contentTemplate = contentTemplate.replace("$NAME$", e.titel);
+            contentTemplate = contentTemplate.replace("$DESC$", e.beschreibung);
+            contentRow.innerHTML = contentTemplate;
+            table.appendChild(contentRow);
+        }
 
         container.querySelector("main > div").appendChild(table);
         console.log(container);
