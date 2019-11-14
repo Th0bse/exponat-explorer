@@ -2,6 +2,20 @@ dummy{
 
 }
 
+.b1{
+  border-radius: 15px;
+  border: solid;
+  border-width:thick;
+  border-color: rgb(210, 105, 030);
+
+}
+.b2{
+  border-radius: 15px;
+  border: solid;
+  border-width:thick;
+  border-color: rgb(210, 105, 030);
+
+}
 
 
 .rahmen >*  {
