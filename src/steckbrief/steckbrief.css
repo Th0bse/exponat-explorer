@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .infos {
     background-color: white;
     font-size:10px;
@@ -9,6 +10,25 @@
     padding: 30px;
     text-align: center;
 }
+=======
+main {
+    margin: auto;
+    padding: 0;
+    height: 100%;
+    text-align: left;
+    }
+
+section { min-height: 100%;
+    }
+.infos {
+  front-family: 'Roboto', sans-serif;
+  front-weight: 500;
+  color: black;
+  background-color: white;
+  text-align: left;
+  margin-top: 0px;
+
+>>>>>>> Stashed changes
 
 .steckbriefInhalt {
     font-size: 20px !important;
@@ -16,6 +36,7 @@
     padding-left: 2.5em;
     margin-top: 2em;
 }
+<<<<<<< Updated upstream
 
 .zurueckButton {
     background-color: rgb(210,105,030);
@@ -34,9 +55,34 @@
     margin-left: 2em;
     margin-bottom: 2em;
 }
+=======
+a {
+  text-decoration: underline;
+  color: black;
+>>>>>>> Stashed changes
 
 .imgZurueckButton {
     width: 3em;
     height: auto;
     margin-right: 1em;
+}
+img {
+  display: block;
+  height: auto;
+  margin-left: 0px;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+.Ueberschrift1 {
+  margin-top: 0px;
+  font-size: 40pt;
+  background-color: rgb(210,105,030);
+  text-align: center;
+}
+.Einleitung {
+  margin-top: -10px;
+  text-align: center;
+  background-color: rgb(210,105,030);
 }
