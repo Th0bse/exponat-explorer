@@ -1,9 +1,7 @@
 "use strict";
 
 import stylesheet from "./app.css";
-
 import Steckbrief from "./steckbrief/steckbrief.js";
-
 import Erstellen from "./erstellen/erstellen.js";
 import Navigo from "navigo/lib/navigo.js";
 import Overview from "./overview/overview.js";
@@ -20,10 +18,11 @@ class App {
      * Konstruktor.
      */
     constructor() {
-        this.exponate = [];
+        this.exponate=[];
+        this.einlesen();
+        this.lastClickedExponat = 0;
         this._title = "Exponat Explorer";
         this._currentView = null;
-
         this._router = new Navigo(null, true);
         this._currentUrl = "";
 
@@ -35,8 +34,7 @@ class App {
             "*": () => this.showOverview(),
         });
 
-        this._router.hooks({
-                after: (params) => {
+        this._router.hooks({ after: (params) => {
                     // Navigation durchführen, daher die neue URL merken
                     this._currentUrl = this._router.lastRouteResolved().url;
                 }
@@ -50,7 +48,7 @@ class App {
     start() {
         console.log("Die Klasse App sagt Hallo!");
         this._router.resolve();
-        this.einlesen();
+
     }
 
     _switchVisibleView(view) {
@@ -88,32 +86,28 @@ class App {
     }
 
     einlesen() {
-        this.addExponat("./img/exponat_bilder/exponat_katzen.jpg", "Wildkatzen", "Manfred Uwe", "Schwarzwald", "25.08.2004", "01.01.2012-01.01.2020", "Willi-Hellermann-Museum");
-        this.addExponat("./img/exponat_bilder/exponat_kopf.jpg", "Maya Kopf", "-", "Amerika", "1055", "02.10.2017-01.08.2025", "Montopolinten Museum of Art");
-        this.addExponat("./img/exponat_bilder/exponat_spiegel.jpg", "Antiker Spiegel", "Otto Wingler", "Schwarzwald", "1896", "19.04.2005-01.01.2030", "Kultur-Museum Karlsruhe");
-        this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg", "Stoffschatulle", "-", "USA", "24.03.1790", "02.06.2002-20.02.2022", "Louvre");
-        this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg", "Toter Panda", "Margit Czeniz", "Sydeny", "18.05.2000", "01.01.2009-01.01.3000", "Naturkunde-Museum Heidelberg");
-        this.addExponat("./img/exponat_bilder/exponat_windraad.jpg", "Windraad Herkules", "Harald Schütz", "München", "14.03.1968", "01.01.2012-01.01.2020", "Deutsches Museum");
-//    DEBUG:
-        console.log(this.exponate);
-        this.removeExponat("Wildkatzen");
-        console.log(this.exponate);
+        this.addExponat("./img/exponat_bilder/exponat_katzen.jpg", "Wildkatzen", "Manfred Uwe", "Schwarzwald", "25.08.2004", "01.01.2012-01.01.2020","50000€", "Willi-Hellermann-Museum","UWE","barrok");
+        this.addExponat("./img/exponat_bilder/exponat_kopf.jpg", "Maya Kopf", "-", "Amerika", "1055", "02.10.2017-01.08.2025","50000€", "Montopolinten Museum of Art","UWE","barrok");
+        this.addExponat("./img/exponat_bilder/exponat_spiegel.jpg", "Antiker Spiegel", "Otto Wingler", "Schwarzwald", "1896", "19.04.2005-01.01.2030","50000€", "Kultur-Museum Karlsruhe","UWE","barrok");
+        this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg", "Stoffschatulle", "-", "USA", "24.03.1790", "02.06.2002-20.02.2022","50000€", "Louvre","UWE","barrok");
+        this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg", "Toter Panda", "Margit Czeniz", "Sydeny", "18.05.2000", "01.01.2009-01.01.3000","50000€", "Naturkunde-Museum Heidelberg","UWE","barrok");
+        this.addExponat("./img/exponat_bilder/exponat_windraad.jpg", "Windraad Herkules", "Harald Schütz", "München", "14.03.1968", "01.01.2012-01.01.2020","50000€", "Deutsches Museum","UWE","barrok");
+
+      //  window.localStorage.setItem("exponate", JSON.stringify(exponate));
+// DEBUG:
+//         console.log(this.exponate);
+//         this.removeExponat("Wildkatzen");
+//         console.log(this.exponate);
     }
 
 
-    addExponat(link, titel, kuenster, ort, erstelldatum, ausstellungszeitraum, ausstellungsort) {
-        this.exponate.push({
-            link: link,
-            titel: titel,
-            kuenstler: kuenster,
-            ort: ort,
-            erstelldatum: erstelldatum,
-            ausstellungszeitraum: ausstellungszeitraum,
-            ausstellungsort: ausstellungsort,
-
-        });
-
-
+    addExponat(link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche) {
+        var einExpo =[link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche];
+        localStorage.setItem(einExpo[1],JSON.stringify(einExpo));
+    }
+    getExponat(titel){
+      var dasExpo=JSON.parse(localStorage.getItem(titel));
+      return dasExpo;
     }
 
     removeExponat(name) {
@@ -122,8 +116,6 @@ class App {
                 delete this.exponate[i];
             }
         }
-
-
     }
 
     showOverview() {

@@ -1,13 +1,24 @@
-.infos {
-    background-color: white;
-    font-size:10px;
-}
-
 .steckbriefÜberschrift {
     font-size: 100px;
     background-color: rgb(255, 228, 181);
     padding: 30px;
     text-align: center;
+}
+
+
+
+.infos {
+    front-family: 'Roboto', sans-serif;
+    front-weight: 500;
+    color: black;
+        min-height: 100%;
+    background-color: white;
+    text-align: left;
+    margin: auto;
+    padding: 0;
+    height: 100%;
+    text-align: left;
+    margin-top: 0px;
 }
 
 .steckbriefInhalt {
@@ -35,8 +46,30 @@
     margin-bottom: 2em;
 }
 
+
 .imgZurueckButton {
     width: 3em;
     height: auto;
     margin-right: 1em;
+}
+.anzBild {
+  display: block;
+  height: 200px;
+  width: 300px;
+  margin-left: 0px;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+.Ueberschrift1 {
+  margin-top: 0px;
+  font-size: 40pt;
+  background-color: rgb(210,105,030);
+  text-align: center;
+}
+.Einleitung {
+  margin-top: -10px;
+  text-align: center;
+  background-color: rgb(210,105,030);
 }
