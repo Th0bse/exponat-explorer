@@ -104,7 +104,7 @@ class App {
     }
 
 
-    addExponat(link, titel, kuenster, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche) {
+    addExponat(link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche) {
         this.exponate.push({
             link: link,
             titel: titel,
