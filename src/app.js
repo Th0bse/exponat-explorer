@@ -1,9 +1,7 @@
 "use strict";
 
 import stylesheet from "./app.css";
-
 import Steckbrief from "./steckbrief/steckbrief.js";
-
 import Erstellen from "./erstellen/erstellen.js";
 import Navigo from "navigo/lib/navigo.js";
 import Overview from "./overview/overview.js";
@@ -23,10 +21,8 @@ class App {
         this.exponate = [];
         this.einlesen();
         this.lastClickedExponat = 0;
-        
-        this._title = "My App";
+        this._title = "Exponat Explorer";
         this._currentView = null;
-
         this._router = new Navigo(null, true);
         this._currentUrl = "";
 
@@ -38,8 +34,7 @@ class App {
             "*": () => this.showOverview(),
         });
 
-        this._router.hooks({
-                after: (params) => {
+        this._router.hooks({ after: (params) => {
                     // Navigation durchführen, daher die neue URL merken
                     this._currentUrl = this._router.lastRouteResolved().url;
                 }
