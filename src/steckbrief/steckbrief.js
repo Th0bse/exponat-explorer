@@ -20,16 +20,11 @@ class Steckbrief {
 
         let template = container.querySelector("#eintraege").innerHTML;
 
-        console.log(template);
 
 
             //var index = app.lastClickedExponat;
             var index = 3;
-
-
             var dasExpo=this.app.getExponat("Maya Kopf");
-            console.log(dasExpo);
-
             template = template.replace("$TITEL$", dasExpo[1]);
             template = template.replace("$KUENSTLER$", dasExpo[2]);
             template = template.replace("$ORT$", dasExpo[3]);
@@ -39,8 +34,16 @@ class Steckbrief {
             template = template.replace("$BESCHR$", dasExpo[8]);
             template = template.replace("$EPOCHE$",dasExpo[9]);
             template = template.replace("$WERT$", dasExpo[6]);
+            let pic = document.createElement("img");
+            pic.src=dasExpo[0];
+            pic.setAttribute("class","anzBild");
+            console.log(pic);
+          //  container.querySelector(".steckbrief_bild").appendChild();
+
+
             //var pic = document.querySelector("#steckbrief_bild");
             //console.log(pic);
+          //
           //  pic.src=dasExpo[0];
 
 
