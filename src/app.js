@@ -21,7 +21,7 @@ class App {
      */
     constructor() {
         this.exponate = [];
-        this._title = "My App";
+        this._title = "Exponat Explorer";
         this._currentView = null;
 
         this._router = new Navigo(null, true);
