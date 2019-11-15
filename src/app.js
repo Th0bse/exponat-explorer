@@ -20,10 +20,10 @@ class App {
      * Konstruktor.
      */
     constructor() {
-        this.exponate = [];
+        this.exponate=[];
         this.einlesen();
         this.lastClickedExponat = 0;
-        
+
         this._title = "My App";
         this._currentView = null;
 
@@ -53,7 +53,7 @@ class App {
     start() {
         console.log("Die Klasse App sagt Hallo!");
         this._router.resolve();
-        this.einlesen();
+
     }
 
     _switchVisibleView(view) {
@@ -97,6 +97,8 @@ class App {
         this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg", "Stoffschatulle", "-", "USA", "24.03.1790", "02.06.2002-20.02.2022","50000€", "Louvre","UWE","barrok");
         this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg", "Toter Panda", "Margit Czeniz", "Sydeny", "18.05.2000", "01.01.2009-01.01.3000","50000€", "Naturkunde-Museum Heidelberg","UWE","barrok");
         this.addExponat("./img/exponat_bilder/exponat_windraad.jpg", "Windraad Herkules", "Harald Schütz", "München", "14.03.1968", "01.01.2012-01.01.2020","50000€", "Deutsches Museum","UWE","barrok");
+
+      //  window.localStorage.setItem("exponate", JSON.stringify(exponate));
 // DEBUG:
 //         console.log(this.exponate);
 //         this.removeExponat("Wildkatzen");
@@ -104,27 +106,21 @@ class App {
     }
 
 
-    addExponat(link, titel, kuenster, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche) {
-        this.exponate.push({
-            link: link,
-            titel: titel,
-            kuenstler: kuenstler,
-            ort: ort,
-            erstelldatum: erstelldatum,
-            ausstellungszeitraum: ausstellungszeitraum,
-            wert: wert,
-            ausstellungsort: ausstellungsort,
-            beschreibung: beschreibung,
-            epoche: epoche,
-
-        });
+    addExponat(link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche) {
+        var einExpo =[link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche];
+        localStorage.setItem(einExpo[1],JSON.stringify(einExpo));
 
 
+        
+    }
+    getExponat(titel){
+      var dasExpo=JSON.parse(localStorage.getItem(titel));
+      return dasExpo;
     }
 
     removeExponat(name) {
         for (var i = 0; i < this.exponate.length; i++) {
-            if (this.exponate[i].titel === name) {
+            if (this.exponate[i].titel == name) {
                 delete this.exponate[i];
             }
         }

@@ -25,22 +25,25 @@ class Steckbrief {
 
             //var index = app.lastClickedExponat;
             var index = 3;
-            console.log(this.app);
-            console.log(this.app.exponate);
-            console.log(this.app.exponate[1]);
-            console.log(this.app.exponate[1].titel);
 
-            template = template.replace("$TITEL$", this.app.exponate[index].titel);
-            template = template.replace("$KUENSTLER$", this.app.exponate[index].kuenstler);
-            template = template.replace("$ORT$", this.app.exponate[index].ort);
-            template = template.replace("$ERST_DATUM$", this.app.exponate[index].erstelldatum);
-            template = template.replace("$ZEITRAUM$",this.app.exponate[index].ausstellungszeitraum);
-            template = template.replace("$AUST_ORT$", this.app.exponate[index].ausstellungsort);
-            template = template.replace("$BESCHR$", this.app.exponate[index].beschreibung);
-            template = template.replace("$EPOCHE$", this.app.exponate[index].epoche);
-            template = template.replace("$WERT$", this.app.exponate[index].wert);
 
-            console.log(template);
+            var dasExpo=this.app.getExponat("Maya Kopf");
+            console.log(dasExpo);
+
+            template = template.replace("$TITEL$", dasExpo[1]);
+            template = template.replace("$KUENSTLER$", dasExpo[2]);
+            template = template.replace("$ORT$", dasExpo[3]);
+            template = template.replace("$ERST_DATUM$", dasExpo[4]);
+            template = template.replace("$ZEITRAUM$",dasExpo[5]);
+            template = template.replace("$AUST_ORT$", dasExpo[7]);
+            template = template.replace("$BESCHR$", dasExpo[8]);
+            template = template.replace("$EPOCHE$",dasExpo[9]);
+            template = template.replace("$WERT$", dasExpo[6]);
+            //var pic = document.querySelector("#steckbrief_bild");
+            //console.log(pic);
+          //  pic.src=dasExpo[0];
+
+
             let dummy = document.createElement("div");
             dummy.innerHTML = template;
 

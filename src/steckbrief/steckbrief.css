@@ -4,22 +4,19 @@
     padding: 30px;
     text-align: center;
 }
-main {
-    margin: auto;
-    padding: 0;
-    height: 100%;
-    text-align: left;
-    }
 
-section {
-    min-height: 100%;
-}
+
 
 .infos {
     front-family: 'Roboto', sans-serif;
     front-weight: 500;
     color: black;
+        min-height: 100%;
     background-color: white;
+    text-align: left;
+    margin: auto;
+    padding: 0;
+    height: 100%;
     text-align: left;
     margin-top: 0px;
 }
@@ -49,19 +46,16 @@ section {
     margin-bottom: 2em;
 }
 
-a {
-    text-decoration: underline;
-    color: black;
-}
 
 .imgZurueckButton {
     width: 3em;
     height: auto;
     margin-right: 1em;
 }
-img {
+.anzBild {
   display: block;
-  height: auto;
+  height: 200px;
+  width: 300px;
   margin-left: 0px;
   margin-right: auto;
   margin-top: 20px;
