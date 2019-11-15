@@ -57,10 +57,10 @@ class Erstellen {
         this.werte[8] = inputBeschreibung;
         this.werte[9] = inputEpoche;
 
-        console.log(this.werte);
+        console.log(this.werte); // es wird ein array mit 10 Feldern erzeugt, in denen allen null steht
     }
 
-    werteLoeschen() {
+    werteLoeschen() { // die Methode macht nichts, ich wollte die Methode removeExponat aus app.js anwenden
         removeExponat(name);
         console.log("loeschen");
     }
