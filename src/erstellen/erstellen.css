@@ -14,38 +14,6 @@
     text-align: center;
 }
 
-.bild-Upload {
-    border: 5px dotted red;
-    width: 10em;
-    height: 10em;
-    float: right;
-    margin-right: 1em;
-    margin-top: 0.5em;
-    margin-bottom: 1.5em;
-    cursor: pointer !important;
-    text-align: center;
-
-}
-
-#inputLink {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-.upload-bild {
-    cursor: pointer !important;
-}
-
-.imgMuseum {
-    width: 80%;
-    height: auto;
-    cursor: pointer !important;
-}
-
 .div-tabelle {
     background-color: white;
     padding-top: 1em;
@@ -64,19 +32,9 @@
     width: 30%;
 }
 
-.zelle-mitte {
-    width: 40%;
-    padding: 0.5em;
-}
-
 .zelle-rechts {
     padding: 0.5em;
     margin-right: 2em;
-}
-
-.zelle-upload {
-    margin-right: 2em;
-    padding-left: 2em;
 }
 
 .form-control {

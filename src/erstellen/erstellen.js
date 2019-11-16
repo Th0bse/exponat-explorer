@@ -11,40 +11,48 @@ class Erstellen {
     }
 
     onShow() {
+
         //create Container from imported HTML
-        this.container = document.createElement("div");
-        this.container.innerHTML = erstellen.trim();
+        let container = document.createElement("div");
+        container.innerHTML = erstellen.trim();
 
         this.app.addExponat();
 
-        this.initListeners();
+        // init listeners
+        let saveButton = container.querySelector("#hinzufuegen");
+        saveButton.addEventListener("click", () => this.werteHolen());
+
+        let deleteButton = container.querySelector("#loeschen");
+        deleteButton.addEventListener("click", () => this.werteLoeschen());
 
 
         let content = {
             className: "erstellen",
-            main: this.container.querySelectorAll("main > *"),
+            main: container.querySelectorAll("main > *"),
         };
 
         // Ergebnis zurückliefern
         return content;
+
     }
 
-    werteHolen(con) {
+    werteHolen() {
+        
         this.werte = [];
 
         // Holt Inhalte aus Inputfeldern und speichert in Variablen
-        let inputLink = this.container.querySelector("#inputLink");
-        let inputTitel = this.container.querySelector("#inputTitel");
-        let inputKuenstler = this.container.querySelector("#inputKuenstler");
-        let inputOrt = this.container.querySelector("#inputOrt");
-        let inputErstelldatum = this.container.querySelector("#inputErstelldatum");
-        let inputAusstellungszeitraum = this.container.querySelector("#inputAusstellungszeitraum");
-        let inputWert = this.container.querySelector("#inputWert");
-        let inputAusstellungsort = this.container.querySelector("#inputAusstellungsort");
-        let inputBeschreibung = this.container.querySelector("#inputBeschreibung");
-        let inputEpoche = this.container.querySelector("#inputEpoche");
+        let inputLink = document.getElementById("inputlink").value;
+        let inputTitel = document.getElementById("inputTitel").value;
+        let inputKuenstler = document.getElementById("inputKuenstler").value;
+        let inputOrt = document.getElementById("inputOrt").value;
+        let inputErstelldatum = document.getElementById("inputErstelldatum").value;
+        let inputAusstellungszeitraum = document.getElementById("inputAusstellungszeitraum").value;
+        let inputWert = document.getElementById("inputWert").value;
+        let inputAusstellungsort = document.getElementById("inputAusstellungsort").value;
+        let inputBeschreibung = document.getElementById("inputBeschreibung").value;
+        let inputEpoche = document.getElementById("inputEpoche").value;
 
-        // Geholte Inputwerte werden in Array eingefügt
+        // Fügt in werte Array gespeicherte Variablen
         this.werte[0] = inputLink;
         this.werte[1] = inputTitel;
         this.werte[2] = inputKuenstler;
@@ -56,25 +64,23 @@ class Erstellen {
         this.werte[8] = inputBeschreibung;
         this.werte[9] = inputEpoche;
 
-        console.log(this.werte); // es wird ein array mit 10 Feldern erzeugt, in denen allen null steht
+        console.log(this.werte);
+
+        // Speichert werte Array in localStorage
+        this.app.addExponat(this.werte);
     }
 
-    werteLoeschen() { // die Methode macht nichts, ich wollte die Methode removeExponat aus app.js anwenden
-        removeExponat(name);
-        console.log("loeschen");
-    }
+    werteLoeschen() {
 
-    initListeners() {
-        let saveButton = this.container.querySelector("#hinzufuegen");
-        saveButton.addEventListener("click", () => this.werteHolen());
-
-         let deleteButton = this.container.querySelector("#loeschen");
-         deleteButton.addEventListener("click", () => this.werteLoeschen());
+        // Löschte werte Array aus localStorage
+        this.app.removeExponat(this.werte);
+        console.log("geloescht");
     }
 
     get title() {
         return "Erstellen";
     }
+
 }
 
 export default Erstellen;
