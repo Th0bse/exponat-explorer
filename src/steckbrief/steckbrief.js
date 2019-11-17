@@ -16,15 +16,16 @@ class Steckbrief {
         let container = document.createElement("div");
         container.innerHTML = steckbrief.trim();
 
+        let backButton = container.querySelector("#back_button_overview");
+        backButton.addEventListener("click", () => this.app.showOverview());
+
+
 
 
         let template = container.querySelector("#eintraege").innerHTML;
 
         // console.log(this.app.lastClickedExponat);
             var dasExpo=this.app.getExponat(this.app.lastClickedExponat);
-
-            console.log(this.app.lastClickedExponat);
-            console.log(dasExpo);
 
             template = template.replace("$TITEL$", dasExpo[1]);
             template = template.replace("$KUENSTLER$", dasExpo[2]);
@@ -36,20 +37,22 @@ class Steckbrief {
             template = template.replace("$EPOCHE$",dasExpo[9]);
             template = template.replace("$WERT$", dasExpo[6]);
             let pic = document.createElement("img");
-            pic.src="https://i.imgur.com/vPZXIx0.jpg";
+            pic.src=dasExpo[0];
             pic.setAttribute("class","anzBild");
             // console.log(pic);
           //  container.querySelector(".steckbrief_bild").appendChild();
 
 
             //var pic = document.querySelector("#steckbrief_bild");
-            //// console.log(pic);
+            //console.log(pic);
           //
           //  pic.src=dasExpo[0];
 
 
             let dummy = document.createElement("div");
             dummy.innerHTML = template;
+            dummy.appendChild(pic);
+
 
             container.querySelector(".steckbriefInhalt").appendChild(dummy);
 
