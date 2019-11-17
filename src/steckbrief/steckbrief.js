@@ -20,10 +20,12 @@ class Steckbrief {
 
         let template = container.querySelector("#eintraege").innerHTML;
 
+        // console.log(this.app.lastClickedExponat);
+            var dasExpo=this.app.getExponat(this.app.lastClickedExponat);
 
-            //var index = app.lastClickedExponat;
+            console.log(this.app.lastClickedExponat);
+            console.log(dasExpo);
 
-            var dasExpo=this.app.getExponat("Maya Kopf");
             template = template.replace("$TITEL$", dasExpo[1]);
             template = template.replace("$KUENSTLER$", dasExpo[2]);
             template = template.replace("$ORT$", dasExpo[3]);
@@ -36,12 +38,12 @@ class Steckbrief {
             let pic = document.createElement("img");
             pic.src="https://i.imgur.com/vPZXIx0.jpg";
             pic.setAttribute("class","anzBild");
-            console.log(pic);
+            // console.log(pic);
           //  container.querySelector(".steckbrief_bild").appendChild();
 
 
             //var pic = document.querySelector("#steckbrief_bild");
-            //console.log(pic);
+            //// console.log(pic);
           //
           //  pic.src=dasExpo[0];
 
@@ -53,7 +55,7 @@ class Steckbrief {
 
         // Anzuzeigende HTML-Elemente ermitteln
         //let section = container.querySelector("#overview").cloneNode(true);
-        console.log(container);
+        // console.log(container);
         let content = {
             className: "steckbrief",
             main: container.querySelectorAll("main > *"),

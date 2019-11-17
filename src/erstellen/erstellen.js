@@ -58,7 +58,7 @@ class Erstellen {
 
         // Löschte werte Array aus localStorage
         this.app.removeExponat(this.werte);
-        console.log("geloescht");
+        // console.log("geloescht");
     }
 
     get title() {
