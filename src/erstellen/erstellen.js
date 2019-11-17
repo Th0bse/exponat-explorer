@@ -37,37 +37,21 @@ class Erstellen {
     }
 
     werteHolen() {
-        
-        this.werte = [];
 
         // Holt Inhalte aus Inputfeldern und speichert in Variablen
-        let inputLink = document.getElementById("inputlink").value;
-        let inputTitel = document.getElementById("inputTitel").value;
-        let inputKuenstler = document.getElementById("inputKuenstler").value;
-        let inputOrt = document.getElementById("inputOrt").value;
-        let inputErstelldatum = document.getElementById("inputErstelldatum").value;
-        let inputAusstellungszeitraum = document.getElementById("inputAusstellungszeitraum").value;
-        let inputWert = document.getElementById("inputWert").value;
-        let inputAusstellungsort = document.getElementById("inputAusstellungsort").value;
-        let inputBeschreibung = document.getElementById("inputBeschreibung").value;
-        let inputEpoche = document.getElementById("inputEpoche").value;
-
-        // Fügt in werte Array gespeicherte Variablen
-        this.werte[0] = inputLink;
-        this.werte[1] = inputTitel;
-        this.werte[2] = inputKuenstler;
-        this.werte[3] = inputOrt;
-        this.werte[4] = inputErstelldatum;
-        this.werte[5] = inputAusstellungszeitraum;
-        this.werte[6] = inputWert;
-        this.werte[7] = inputAusstellungsort;
-        this.werte[8] = inputBeschreibung;
-        this.werte[9] = inputEpoche;
-
-        console.log(this.werte);
+        let link = document.getElementById("inputlink").value;
+        let titel = document.getElementById("inputTitel").value;
+        let kuenstler = document.getElementById("inputKuenstler").value;
+        let ort = document.getElementById("inputOrt").value;
+        let erstelldatum = document.getElementById("inputErstelldatum").value;
+        let ausstellungszeitraum = document.getElementById("inputAusstellungszeitraum").value;
+        let wert = document.getElementById("inputWert").value;
+        let ausstellungsort = document.getElementById("inputAusstellungsort").value;
+        let beschreibung = document.getElementById("inputBeschreibung").value;
+        let epoche = document.getElementById("inputEpoche").value;
 
         // Speichert werte Array in localStorage
-        this.app.addExponat(this.werte);
+        this.app.addExponat(link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum, wert, ausstellungsort, beschreibung, epoche);
     }
 
     werteLoeschen() {
