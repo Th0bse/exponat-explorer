@@ -86,12 +86,12 @@ class App {
     }
 
     einlesen() {
-        this.addExponat("./img/exponat_bilder/exponat_katzen.jpg", "Wildkatzen", "Manfred Uwe", "Schwarzwald", "25.08.2004", "01.01.2012-01.01.2020","50000€", "Willi-Hellermann-Museum","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_kopf.jpg", "Maya Kopf", "-", "Amerika", "1055", "02.10.2017-01.08.2025","50000€", "Montopolinten Museum of Art","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_spiegel.jpg", "Antiker Spiegel", "Otto Wingler", "Schwarzwald", "1896", "19.04.2005-01.01.2030","50000€", "Kultur-Museum Karlsruhe","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg", "Stoffschatulle", "-", "USA", "24.03.1790", "02.06.2002-20.02.2022","50000€", "Louvre","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg", "Toter Panda", "Margit Czeniz", "Sydeny", "18.05.2000", "01.01.2009-01.01.3000","50000€", "Naturkunde-Museum Heidelberg","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_windraad.jpg", "Windraad Herkules", "Harald Schütz", "München", "14.03.1968", "01.01.2012-01.01.2020","50000€", "Deutsches Museum","UWE","barrok");
+        this.addExponat("https://www.wn.de/var/storage/images/wn/startseite/muensterland/3152621-willi-hellermann-museum-neues-leben-fuer-die-praeparate-schau-1500-exponate-werden-ausgestellt/90902293-8-ger-DE/Willi-Hellermann-Museum-Neues-Leben-fuer-die-Praeparate-Schau-1500-Exponate-werden-ausgestellt1_image_1024_width.jpg", "Wildkatzen", "Manfred Uwe", "Schwarzwald", "25.08.2004", "01.01.2012-01.01.2020","50000€", "Willi-Hellermann-Museum","UWE","barrok");
+        this.addExponat("https://upload.wikimedia.org/wikipedia/commons/e/eb/Metropolitain_Museum_of_Art_Exponat.jpg", "Maya Kopf", "-", "Amerika", "1055", "02.10.2017-01.08.2025","50000€", "Montopolinten Museum of Art","UWE","barrok");
+        this.addExponat("https://i.pinimg.com/originals/36/7a/71/367a7176fa6491115818d8b3b303f2d6.jpg", "Antiker Spiegel", "Otto Wingler", "Schwarzwald", "1896", "19.04.2005-01.01.2030","50000€", "Kultur-Museum Karlsruhe","UWE","barrok");
+        this.addExponat("https://www.br.de/franken/inhalt/kultur/jean-paul-museum-exponate-106~_v-img__16__9__l_-1dc0e8f74459dd04c91a0d45af4972b9069f1135.jpg?version=251cd", "Stoffschatulle", "-", "USA", "24.03.1790", "02.06.2002-20.02.2022","50000€", "Louvre","UWE","barrok");
+        this.addExponat("https://static.az-cdn.ch/__ip/7cTR2m9GuEQb-eK7zLev_a4A4bo/a34ee733d1deea50c1171bf191260c6767cfe367/remote.adjust.rotate=0&remote.size.w=3200&remote.size.h=2129&local.crop.h=1800&local.crop.w=3200&local.crop.x=0&local.crop.y=127&r=1,n-wide2x-16x9", "Toter Panda", "Margit Czeniz", "Sydeny", "18.05.2000", "01.01.2009-01.01.3000","50000€", "Naturkunde-Museum Heidelberg","UWE","barrok");
+        this.addExponat("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpRBK_Zyjekv1lPczTfFqf0hIT1nDzi7YoQyPDOmfCZcycD9Rj4w&s", "Windraad Herkules", "Harald Schütz", "München", "14.03.1968", "01.01.2012-01.01.2020","50000€", "Deutsches Museum","UWE","barrok");
 
       //  window.localStorage.setItem("exponate", JSON.stringify(exponate));
 // DEBUG:
