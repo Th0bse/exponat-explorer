@@ -5,13 +5,14 @@
     text-align: center;
 }
 
-
-
+.steckbrief_bild{
+ padding: 5px !important;
+}
 .infos {
     front-family: 'Roboto', sans-serif;
     front-weight: 500;
     color: black;
-        min-height: 100%;
+    min-height: 100%;
     background-color: white;
     text-align: left;
     margin: auto;

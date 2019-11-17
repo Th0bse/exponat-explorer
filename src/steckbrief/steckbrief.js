@@ -24,7 +24,7 @@ class Steckbrief {
 
             //var index = app.lastClickedExponat;
             var index = 3;
-            var dasExpo=this.app.getExponat("Maya Kopf");
+            var dasExpo=this.app.getExponat("Windraad Herkules");
             template = template.replace("$TITEL$", dasExpo[1]);
             template = template.replace("$KUENSTLER$", dasExpo[2]);
             template = template.replace("$ORT$", dasExpo[3]);
@@ -49,6 +49,8 @@ class Steckbrief {
 
             let dummy = document.createElement("div");
             dummy.innerHTML = template;
+            dummy.appendChild(pic);
+
 
             container.querySelector(".steckbriefInhalt").appendChild(dummy);
 
