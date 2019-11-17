@@ -5,10 +5,10 @@ der das Museum seine Ausstellungsstücke präsentieren kann.
 
 ## (grobe) Aufteilung:
 
-Alicia: Exponat erstellen
-Simon: Startseite, Funktionalität der app.js, Javascript zum Steckbrief
-Robert: HTML + Teile CSS zum Steckbrief
-Thorben: Überblick Exponate, Funktionalität der app.js
+- Alicia: Exponat erstellen
+- Simon: Startseite, Funktionalität der app.js, Javascript zum Steckbrief
+- Robert: HTML + Teile CSS zum Steckbrief
+- Thorben: Überblick Exponate, Funktionalität der app.js
 
 ## Starten der Single Page App
 
