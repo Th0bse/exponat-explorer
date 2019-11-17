@@ -31,7 +31,7 @@ class App {
             "steckbrief": () => this.showSteckbrief(),
             "overview": () => this.showOverview(),
             "erstellen": () => this.showErstellen(),
-            "*": () => this.showOverview(),
+            "*": () => this.showStartView(),
         });
 
         this._router.hooks({ after: (params) => {
