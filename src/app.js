@@ -46,7 +46,6 @@ class App {
      * Ab hier beginnt die Anwendung zu laufen.
      */
     start() {
-        // console.log("Die Klasse App sagt Hallo!");
         this._router.resolve();
 
     }
@@ -99,7 +98,6 @@ class App {
         localStorage.setItem(einExpo[1],JSON.stringify(einExpo));
     }
     getExponat(titel) {
-        console.log("getExponat titel: " + titel);
       let dasExpo = JSON.parse(localStorage.getItem(titel));
       return dasExpo;
     }

@@ -15,8 +15,6 @@ class Startview {
         container.innerHTML = startview.trim();
 
         // Anzuzeigende HTML-Elemente ermitteln
-        // let section = container.querySelector("#startview").cloneNode(true);
-        // console.log(container);
         let content = {
             className: "startview",
             main: container.querySelectorAll("main > *"),
