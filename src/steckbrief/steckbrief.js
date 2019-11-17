@@ -16,6 +16,10 @@ class Steckbrief {
         let container = document.createElement("div");
         container.innerHTML = steckbrief.trim();
 
+        let backButton = container.querySelector("#back_button_overview");
+        backButton.addEventListener("click", () => this.app.showOverview());
+
+
 
 
         let template = container.querySelector("#eintraege").innerHTML;
