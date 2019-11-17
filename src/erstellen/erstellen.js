@@ -11,70 +11,60 @@ class Erstellen {
     }
 
     onShow() {
+
         //create Container from imported HTML
-        this.container = document.createElement("div");
-        this.container.innerHTML = erstellen.trim();
+        let container = document.createElement("div");
+        container.innerHTML = erstellen.trim();
 
         this.app.addExponat();
 
-        this.initListeners();
+        // init listeners
+        let saveButton = container.querySelector("#hinzufuegen");
+        saveButton.addEventListener("click", () => this.werteHolen());
+
+        let deleteButton = container.querySelector("#loeschen");
+        deleteButton.addEventListener("click", () => this.werteLoeschen());
 
 
         let content = {
             className: "erstellen",
-            main: this.container.querySelectorAll("main > *"),
+            main: container.querySelectorAll("main > *"),
         };
 
         // Ergebnis zurückliefern
         return content;
+
     }
 
-    werteHolen(con) {
-        this.werte = [];
+    werteHolen() {
 
         // Holt Inhalte aus Inputfeldern und speichert in Variablen
-        let inputLink = this.container.querySelector("#inputLink");
-        let inputTitel = this.container.querySelector("#inputTitel");
-        let inputKuenstler = this.container.querySelector("#inputKuenstler");
-        let inputOrt = this.container.querySelector("#inputOrt");
-        let inputErstelldatum = this.container.querySelector("#inputErstelldatum");
-        let inputAusstellungszeitraum = this.container.querySelector("#inputAusstellungszeitraum");
-        let inputWert = this.container.querySelector("#inputWert");
-        let inputAusstellungsort = this.container.querySelector("#inputAusstellungsort");
-        let inputBeschreibung = this.container.querySelector("#inputBeschreibung");
-        let inputEpoche = this.container.querySelector("#inputEpoche");
+        let link = document.getElementById("inputlink").value;
+        let titel = document.getElementById("inputTitel").value;
+        let kuenstler = document.getElementById("inputKuenstler").value;
+        let ort = document.getElementById("inputOrt").value;
+        let erstelldatum = document.getElementById("inputErstelldatum").value;
+        let ausstellungszeitraum = document.getElementById("inputAusstellungszeitraum").value;
+        let wert = document.getElementById("inputWert").value;
+        let ausstellungsort = document.getElementById("inputAusstellungsort").value;
+        let beschreibung = document.getElementById("inputBeschreibung").value;
+        let epoche = document.getElementById("inputEpoche").value;
 
-        // Geholte Inputwerte werden in Array eingefügt
-        this.werte[0] = inputLink;
-        this.werte[1] = inputTitel;
-        this.werte[2] = inputKuenstler;
-        this.werte[3] = inputOrt;
-        this.werte[4] = inputErstelldatum;
-        this.werte[5] = inputAusstellungszeitraum;
-        this.werte[6] = inputWert;
-        this.werte[7] = inputAusstellungsort;
-        this.werte[8] = inputBeschreibung;
-        this.werte[9] = inputEpoche;
-
-        console.log(this.werte); // es wird ein array mit 10 Feldern erzeugt, in denen allen null steht
+        // Speichert werte Array in localStorage
+        this.app.addExponat(link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum, wert, ausstellungsort, beschreibung, epoche);
     }
 
-    werteLoeschen() { // die Methode macht nichts, ich wollte die Methode removeExponat aus app.js anwenden
-        removeExponat(name);
-        console.log("loeschen");
-    }
+    werteLoeschen() {
 
-    initListeners() {
-        let saveButton = this.container.querySelector("#hinzufuegen");
-        saveButton.addEventListener("click", () => this.werteHolen());
-
-         let deleteButton = this.container.querySelector("#loeschen");
-         deleteButton.addEventListener("click", () => this.werteLoeschen());
+        // Löschte werte Array aus localStorage
+        this.app.removeExponat(this.werte);
+        console.log("geloescht");
     }
 
     get title() {
         return "Erstellen";
     }
+
 }
 
 export default Erstellen;
