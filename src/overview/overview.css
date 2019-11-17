@@ -2,9 +2,19 @@ dummy {
 
 }
 
-.rahmen > * {
+.rahmen >*  {
+    margin: auto;
     background-color: white;
     padding: 30px;
+    text-align: center;
+}
+
+th {
+    font-size: larger;
+}
+
+table {
+    width: 100%;
 }
 
 main {

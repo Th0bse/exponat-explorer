@@ -31,19 +31,26 @@ class Overview {
         table.appendChild(header);
         console.log(table);
 
+        let exponate = this.app.getAllExponate();
+
+        console.log(exponate);
+        console.log(exponate[1]);
+
         // append the individual rows to the table, one per exponat
-        for (let e in this.app.exponate) {
+        for (let i = 0; i < exponate.length; i++) {
             let contentTemplate = container.querySelector("#table-content").innerHTML;
             console.log(contentTemplate);
             let contentRow = document.createElement("tr");
 
-            contentTemplate = contentTemplate.replace("$NAME$", e.titel);
-            contentTemplate = contentTemplate.replace("$DESC$", e.beschreibung);
+            contentTemplate = contentTemplate.replace("$NAME$", exponate[i][1]);
+            contentTemplate = contentTemplate.replace("$DESC$", exponate[i][8]);
+            contentTemplate = contentTemplate.replace("$IMAGE$", document.createElement("img")
+                .setAttribute("src", exponate[i][0]));
             contentRow.innerHTML = contentTemplate;
             table.appendChild(contentRow);
         }
 
-        container.querySelector("main > div").appendChild(table);
+        container.querySelector("main > .rahmen").appendChild(table);
         console.log(container);
         let content = {
             className: "overview",

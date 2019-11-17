@@ -21,9 +21,8 @@ class Steckbrief {
         let template = container.querySelector("#eintraege").innerHTML;
 
 
-
             //var index = app.lastClickedExponat;
-            var index = 3;
+
             var dasExpo=this.app.getExponat("Maya Kopf");
             template = template.replace("$TITEL$", dasExpo[1]);
             template = template.replace("$KUENSTLER$", dasExpo[2]);
@@ -35,7 +34,7 @@ class Steckbrief {
             template = template.replace("$EPOCHE$",dasExpo[9]);
             template = template.replace("$WERT$", dasExpo[6]);
             let pic = document.createElement("img");
-            pic.src=dasExpo[0];
+            pic.src="https://i.imgur.com/vPZXIx0.jpg";
             pic.setAttribute("class","anzBild");
             console.log(pic);
           //  container.querySelector(".steckbrief_bild").appendChild();

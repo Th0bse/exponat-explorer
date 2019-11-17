@@ -86,12 +86,12 @@ class App {
     }
 
     einlesen() {
-        this.addExponat("./img/exponat_bilder/exponat_katzen.jpg", "Wildkatzen", "Manfred Uwe", "Schwarzwald", "25.08.2004", "01.01.2012-01.01.2020","50000€", "Willi-Hellermann-Museum","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_kopf.jpg", "Maya Kopf", "-", "Amerika", "1055", "02.10.2017-01.08.2025","50000€", "Montopolinten Museum of Art","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_spiegel.jpg", "Antiker Spiegel", "Otto Wingler", "Schwarzwald", "1896", "19.04.2005-01.01.2030","50000€", "Kultur-Museum Karlsruhe","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg", "Stoffschatulle", "-", "USA", "24.03.1790", "02.06.2002-20.02.2022","50000€", "Louvre","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg", "Toter Panda", "Margit Czeniz", "Sydeny", "18.05.2000", "01.01.2009-01.01.3000","50000€", "Naturkunde-Museum Heidelberg","UWE","barrok");
-        this.addExponat("./img/exponat_bilder/exponat_windraad.jpg", "Windraad Herkules", "Harald Schütz", "München", "14.03.1968", "01.01.2012-01.01.2020","50000€", "Deutsches Museum","UWE","barrok");
+        this.addExponat("./img/exponat_bilder/exponat_katzen.jpg", "Wildkatzen", "Manfred Uwe", "Schwarzwald", "25.08.2004", "01.01.2012-01.01.2020","50000€", "Willi-Hellermann-Museum","Die Wildkatze (Felis silvestris) ist eine Art aus der Familie der Katzen, die in verschiedenen Unterarten in Europa (vergleiche Europäische Wildkatze), Afrika, Westasien, Zentralasien bis nach Indien heimisch ist.","Barock");
+        this.addExponat("./img/exponat_bilder/exponat_kopf.jpg", "Maya Kopf", "-", "Amerika", "1055", "02.10.2017-01.08.2025","50000€", "Montopolinten Museum of Art","Die Maya sind ein indigenes Volk bzw. eine Gruppe indigener Völker in Mittelamerika, die insbesondere aufgrund der von ihnen im präkolumbischen Mesoamerika gegründeten Reiche und ihrer hoch entwickelten Kultur bekannt sind.","Barock");
+        this.addExponat("./img/exponat_bilder/exponat_spiegel.jpg", "Antiker Spiegel", "Otto Wingler", "Schwarzwald", "1896", "19.04.2005-01.01.2030","50000€", "Kultur-Museum Karlsruhe","Ein Spiegel (von lat. speculum „Spiegel, Abbild“ zu lat. specere „sehen“) ist eine reflektierende Fläche – glatt genug, dass reflektiertes Licht nach dem Reflexionsgesetz seine Parallelität behält und somit ein Abbild entstehen kann.","Barock");
+        this.addExponat("./img/exponat_bilder/exponat_stoffbox.jpg", "Stoffschatulle", "-", "USA", "24.03.1790", "02.06.2002-20.02.2022","50000€", "Louvre","Die Schatulle (Lehnwort von lat. scatula; siehe auch Schachtel) ist ein kleineres, häufig kunsthandwerklich aufwendig gestaltetes Behältnis zur Aufbewahrung von mehr oder weniger wertvollen Dingen (Geld, Schmuck und Ähnliches). Eine Schatulle kann aus Holz, Leder, Stein (Schmuckstein), Elfenbein oder auch Metall gearbeitet sein und diente im Mittelalter häufig als Minnegabe.[","Barock");
+        this.addExponat("./img/exponat_bilder/exponat_toterpanda.jpg", "Großer Panda", "Margit Czeniz", "Sydeny", "18.05.2000", "01.01.2009-01.01.3000","50000€", "Naturkunde-Museum Heidelberg","Der Große Panda (Ailuropoda melanoleuca), auch Riesenpanda oder Pandabär, ist eine Säugetierart aus der Familie der Bären (Ursidae).","Barock");
+        this.addExponat("./img/exponat_bilder/exponat_windraad.jpg", "Windraad Herkules", "Harald Schütz", "München", "14.03.1968", "01.01.2012-01.01.2020","50000€", "Deutsches Museum","Die Windmühle ist ein technisches Bauwerk, das mit seinen vom Wind in Drehung versetzten Flügeln Arbeit verrichtet. Am meisten verbreitet war die Nutzung als Mühle, deswegen wird die Bezeichnung auf alle derartigen Anlagen übertragen.","Barock");
 
       //  window.localStorage.setItem("exponate", JSON.stringify(exponate));
 // DEBUG:
@@ -102,12 +102,24 @@ class App {
 
 
     addExponat(link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche) {
-        var einExpo =[link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche];
+        var einExpo = [link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum,wert, ausstellungsort,beschreibung,epoche];
         localStorage.setItem(einExpo[1],JSON.stringify(einExpo));
     }
-    getExponat(titel){
-      var dasExpo=JSON.parse(localStorage.getItem(titel));
+    getExponat(titel) {
+      var dasExpo = JSON.parse(localStorage.getItem(titel));
+
       return dasExpo;
+    }
+
+    getAllExponate() {
+        let exponate = [];
+        let keys = Object.keys(localStorage);
+        let i = keys.length;
+
+        while (i--) {
+            exponate.push(JSON.parse(localStorage.getItem(keys[i])));
+        }
+        return exponate;
     }
 
     removeExponat(name) {
