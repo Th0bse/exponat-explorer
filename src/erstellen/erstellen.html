@@ -13,23 +13,29 @@
                 <div class="div-tabelle">
 
                     <table class="tabelle">
+                    <!--Tabelle mit zwei Spalten und zehn Zeilen. In der rechten Zeile befinden sich die Labels, zu den dazugehörigen Inputfeldern, welche in der rechten Spalte angeordnet sind.-->
+
+                        <tr>
+                            <td class="zelle-links">
+                                <div class="form-group">
+                                    <label for="inputLink">Link</label>
+                                </div>
+                            </td>
+                            <td class="zelle-rechts">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="inputlink" placeholder="Enter Link">
+                                </div>
+                            </td>
+                        </tr>
                         <tr>
                             <td class="zelle-links">
                                 <div class="form-group">
                                     <label for="inputTitel">Titel</label>
                                 </div>
                             </td>
-                            <td class="zelle-mitte">
+                            <td class="zelle-rechts">
                                 <div class="form-group">
-                                    <input type="titel" class="form-control" id="inputTitel" placeholder="Enter Titel">
-                                </div>
-                            </td>
-                            <td class="zelle-upload" rowspan="3">
-                                <div class="bild-Upload">
-                                    <input type='file' id="bildUpload" accept="image/*" />
-                                    <label class="upload-bild" for="bildUpload">Bild einf&uuml;gen
-                                        <img class="imgMuseum" id="img" src="./../museum_3584.png" alt="Selfhtml">
-                                    </label>
+                                    <input type="text" class="form-control" id="inputTitel" placeholder="Enter Titel">
                                 </div>
                             </td>
                         </tr>
@@ -39,33 +45,33 @@
                                     <label for="inputKuenstler">K&uuml;nstler</label>
                                 </div>
                             </td>
-                            <td class="zelle-mitte">
+                            <td class="zelle-rechts">
                                 <div class="form-group">
-                                    <input type="kuenstler" class="form-control" id="inputKuenstler" placeholder="Enter K&uuml;nstler">
+                                    <input type="text" class="form-control" id="inputKuenstler" placeholder="Enter K&uuml;nstler">
                                 </div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="zelle-links">
+                            <td class="zelle-rechts">
                                 <div class="form-group">
                                     <label for="inputOrt">Ort</label>
                                 </div>
                             </td>
-                            <td class="zelle-mitte">
+                            <td class="zelle-rechts">
                                 <div class="form-group">
-                                    <input type="ort" class="form-control" id="inputOrt" placeholder="Enter Ort">
+                                    <input type="text" class="form-control" id="inputOrt" placeholder="Enter Ort">
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td class="zelle-links">
                                 <div class="form-group">
-                                    <label for="inputGeschaffen">Geschaffen</label>
+                                    <label for="inputErstelldatum">Erstelldatum</label>
                                 </div>
                             </td>
                             <td class="zelle-rechts" colspan="2">
                                 <div class="form-group">
-                                    <input type="geschaffen" class="form-control-long" id="inputGeschaffen" placeholder="Enter Geschaffen">
+                                    <input type="text" class="form-control-long" id="inputErstelldatum" placeholder="Enter Geschaffen">
                                 </div>
                             </td>
                         </tr>
@@ -77,7 +83,7 @@
                             </td>
                             <td class="zelle-rechts" colspan=2>
                                 <div class="form-group">
-                                    <input type="ausstellungsstart" class="form-control-long" id="inputAusstellungszeitraum" placeholder="Enter Ausstellungszeitraum">
+                                    <input type="text" class="form-control-long" id="inputAusstellungszeitraum" placeholder="Enter Ausstellungszeitraum">
                                 </div>
                             </td>
                         </tr>
@@ -101,7 +107,7 @@
                             </td>
                             <td class="zelle-rechts" colspan=2>
                                 <div class="form-group">
-                                    <input type="ausstellungsort" class="form-control-long" id="inputAusstellungsort" placeholder="Enter Ausstellungsort">
+                                    <input type="text" class="form-control-long" id="inputAusstellungsort" placeholder="Enter Ausstellungsort">
                                 </div>
                             </td>
                         </tr>
@@ -120,12 +126,12 @@
                         <tr>
                             <td class="zelle-links">
                                 <div class="form-group">
-                                    <label for="epoche">Epoche</label>
+                                    <label for="inputEpoche">Epoche</label>
                                 </div>
                             </td>
                             <td class="zelle-rechts" colspan=2>
                                 <div class="form-group">
-                                    <select class="form-control" id="epoche">
+                                    <select class="form-control" id="inputEpoche">
                                         <option>Barock</option>
                                         <option>Gotik</option>
                                         <option>Impressionismus</option>
@@ -136,7 +142,7 @@
                             </td>
                         </tr>
                     </table>
-                    <button type="button" class="addButton" id="mehr">Exponat hinzuf&uuml;gen</button>
+                    <button type="button" class="addButton" id="hinzufuegen">Exponat hinzuf&uuml;gen</button>
                     <!--Button zum Hinzufuegen eines Exponats-->
                     <button type="button" class="deleteButton" id="loeschen">Exponat l&ouml;schen</button>
                     <!--Button zum Löschen eines Esponats-->

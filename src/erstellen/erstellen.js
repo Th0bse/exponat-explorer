@@ -7,20 +7,25 @@ class Erstellen {
 
     constructor(app) {
         this.app = app;
+
     }
 
     onShow() {
+
         //create Container from imported HTML
         let container = document.createElement("div");
         container.innerHTML = erstellen.trim();
 
-        // Anzuzeigende HTML-Elemente ermitteln
+        this.app.addExponat();
 
-        //let section = container.querySelector("#overview").cloneNode(true);
-        console.log(container);
+        // init listeners
+        let saveButton = container.querySelector("#hinzufuegen");
+        saveButton.addEventListener("click", () => this.werteHolen());
+
+        let deleteButton = container.querySelector("#loeschen");
+        deleteButton.addEventListener("click", () => this.werteLoeschen());
 
 
-        init();
         let content = {
             className: "erstellen",
             main: container.querySelectorAll("main > *"),
@@ -29,121 +34,36 @@ class Erstellen {
         // Ergebnis zurückliefern
         return content;
 
+    }
 
+    werteHolen() {
 
-        function init() {
-            var button = container.querySelector("#mehr");
-            console.log(button);
-            button.onclick = ToDoHinzufügen;
+        // Holt Inhalte aus Inputfeldern und speichert in Variablen
+        let link = document.getElementById("inputlink").value;
+        let titel = document.getElementById("inputTitel").value;
+        let kuenstler = document.getElementById("inputKuenstler").value;
+        let ort = document.getElementById("inputOrt").value;
+        let erstelldatum = document.getElementById("inputErstelldatum").value;
+        let ausstellungszeitraum = document.getElementById("inputAusstellungszeitraum").value;
+        let wert = document.getElementById("inputWert").value;
+        let ausstellungsort = document.getElementById("inputAusstellungsort").value;
+        let beschreibung = document.getElementById("inputBeschreibung").value;
+        let epoche = document.getElementById("inputEpoche").value;
 
-            var clearButton = container.querySelector('#loeschen');
-            clearButton.onclick = allesLöschen;
+        // Speichert werte Array in localStorage
+        this.app.addExponat(link, titel, kuenstler, ort, erstelldatum, ausstellungszeitraum, wert, ausstellungsort, beschreibung, epoche);
+    }
 
-            var eintraegeArray = HolEinträge();
+    werteLoeschen() {
 
-            for (var i = 0; i < eintraegeArray.length; i++) {
-                var aufgabeNr = eintraegeArray[i];
-                var value = JSON.parse(localStorage[aufgabeNr]);
-                insDOMschreiben(aufgabeNr, value);
-            }
-        }
-        function HolEinträge() {
-                var eintraegeArray = localStorage.getItem('eintraegeArray');
-                if (!eintraegeArray) {
-                    eintraegeArray = [];
-                    localStorage.setItem('eintraegeArray', JSON.stringify(eintraegeArray));
-                } else {
-                    eintraegeArray = JSON.parse(eintraegeArray);
-                }
-                return eintraegeArray;
-            }
-
-            function ToDoHinzufügen() {
-                var eintraegeArray = HolEinträge();
-                var value = document.getElementById('eingabe').value;
-                if (value != '') {
-                    var currentDate = new Date();
-                    var aufgabeNr = 'aufgabe_' + currentDate.getTime()
-                    var aufgabeText = {
-                        'value': value
-                    };
-                    localStorage.setItem(aufgabeNr, JSON.stringify(aufgabeText));
-                    eintraegeArray.push(aufgabeNr);
-                    localStorage.setItem('eintraegeArray', JSON.stringify(eintraegeArray));
-                    insDOMschreiben(aufgabeNr, aufgabeText);
-                    document.getElementById('eingabe').value = ' ';
-                } else {
-                    alert('Bitte geben Sie etwas ein!');
-                }
-            }
-
-            function toDoLöschen(e) {
-                var aufgabeNr = e.target.id;
-                var eintraegeArray = HolEinträge();
-                if (eintraegeArray) {
-                    for (var i = 0; i < eintraegeArray.length; i++) {
-                        if (aufgabeNr == eintraegeArray[i]) {
-                            eintraegeArray.splice(i, 1);
-                        }
-                    }
-                    localStorage.removeItem(aufgabeNr);
-                    localStorage.setItem('eintraegeArray', JSON.stringify(eintraegeArray));
-                    ausDOMentfernen(aufgabeNr);
-                }
-            }
-
-            function insDOMschreiben(aufgabeNr, ItemObj) {
-                var eintraege = document.getElementById('eintraege');
-                var eintrag = document.createElement('li');
-                eintrag.setAttribute('id', aufgabeNr);
-                eintrag.innerHTML = ItemObj.value;
-                eintraege.appendChild(eintrag);
-                eintrag.onclick = toDoLöschen;
-            }
-
-            function ausDOMentfernen(aufgabeNr) {
-                var eintrag = document.getElementById(aufgabeNr);
-                eintrag.parentNode.removeChild(eintrag);
-            }
-
-            function allesLöschen() {
-                localStorage.clear();
-                var ItemList = document.getElementById('eintraege');
-                var eintraege = ItemList.childNodes;
-                for (var i = eintraege.length - 1; i >= 0; i--) {
-                    ItemList.removeChild(eintraege[i]);
-                }
-                var eintraegeArray = HolEinträge();
-            }
-
-
-
-            function readURL(input) {
-            if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-              $('#img').attr('src', e.target.result);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-            }
-            }
-
-            $("#bildUpload").change(function() {
-            readURL(this);
-            });
-
-
+        // Löschte werte Array aus localStorage
+        this.app.removeExponat(this.werte);
+        // console.log("geloescht");
     }
 
     get title() {
         return "Erstellen";
     }
-
-
-
-
 
 }
 

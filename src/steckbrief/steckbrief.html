@@ -6,48 +6,64 @@
                 <h1>Exponat Informationen</h1>
             </div>
 
-            <div class="steckbriefInhalt">
-                <table>
-                    <tr>
-                        <td>
-                            <p>Titel:</p>
-                        </td>
-                        <td rowspan="3">
-                            <p>Bild</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Künstler:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Ort:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Erstellt am:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Ausstellungszeitraum:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Austellungsort:</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Wert:</p>
-                        </td>
-                    </tr>
-            </div>
-            <button class="zurueckButton"><img class="imgZurueckButton" src="./../img/zurueckButton.jpg" />Zur&uuml;ck zur &Uumlbersicht</button>
+            <div class="steckbriefInhalt"></div>
+            <button class="zurueckButton" id="back_button_overview"><img class="imgZurueckButton" src="./../img/zurueckButton.jpg" />Zur&uuml;ck zur &Uumlbersicht</button>
         </div>
     </main>
+
+    <!-- template goes here -->
+  <template id="eintraege">
+    <table>
+        <tr>
+            <td>
+                <p>Titel: $TITEL$</p>
+            </td>
+            <td rowspan="3">
+              <div class="steckbrief_bild">
+                <!-- <img class="anzBild"  src="./../img/exponat_bilder/exponat_kopf.jpg" /> -->
+              </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Künstler: $KUENSTLER$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Ort: $ORT$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Erstellt am: $ERST_DATUM$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Ausstellungszeitraum: $ZEITRAUM$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Wert: $WERT$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Austellungsort: $AUST_ORT$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Beschreibung: $BESCHR$</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Epoche: $EPOCHE$</p>
+            </td>
+        </tr>
+      </table>
+    </template>
 </section>
