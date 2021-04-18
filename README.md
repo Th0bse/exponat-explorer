@@ -1,3 +1,6 @@
+!!! ARCHIVED, only there for reference purposes in case the DHBW still needs this !!!
+!!! Will be deleted in the near future without further notice !!!
+
 # Exponat Explorer
 
 Exponat Explorer ist eine simple Single Page App für ein Museum auf
